@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SohamOS</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <main class="app-shell">
+    <header class="topbar panel glow">
+      <h1>SohamOS // Creator Command Center</h1>
+      <p id="dateLabel"></p>
+    </header>
+
+    <section class="stats-row">
+      <article class="panel stat"><h3>Pending Tasks</h3><strong id="pendingTasks">0</strong></article>
+      <article class="panel stat"><h3>Ideas</h3><strong id="contentIdeas">0</strong></article>
+      <article class="panel stat"><h3>Scripts</h3><strong id="scriptsCount">0</strong></article>
+      <article class="panel stat"><h3>Productivity</h3><strong id="productivityScore">0%</strong></article>
+    </section>
+
+    <section class="main-grid">
+      <article class="panel">
+        <h2>Task Planner</h2>
+        <form id="taskForm" class="form-inline">
+          <input id="taskTitle" placeholder="Task" required />
+          <input id="taskDate" type="date" />
+          <input id="taskTime" type="time" />
+          <button>Add</button>
+        </form>
+        <ul id="taskList" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h2>Content Creation Hub</h2>
+        <form id="contentForm" class="form-grid">
+          <select id="contentKind">
+            <option value="idea">Video Idea</option>
+            <option value="script">Script</option>
+            <option value="title">Title</option>
+            <option value="thumbnail">Thumbnail Concept</option>
+            <option value="description">Description</option>
+          </select>
+          <input id="contentTitle" placeholder="Title" required />
+          <textarea id="contentBody" placeholder="Details"></textarea>
+          <button>Save Content</button>
+        </form>
+        <ul id="contentList" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h2>Reminder System</h2>
+        <form id="reminderForm" class="form-inline">
+          <input id="reminderTitle" placeholder="Reminder" required />
+          <input id="reminderTime" type="datetime-local" required />
+          <button>Set</button>
+        </form>
+        <ul id="reminderList" class="list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>
